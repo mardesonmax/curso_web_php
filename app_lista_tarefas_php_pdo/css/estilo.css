@@ -1,0 +1,56 @@
+.menu {
+	margin-bottom: 25px;
+}
+.menu #menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.menu #menu ul li {
+	position: relative;
+}
+.menu #menu span {
+	position: absolute;
+    z-index: 20;
+    right: 1px;
+    top: 1px;
+    padding: 0px 5px;
+    height: 20px;
+    font-size: 0.8em;
+    border-bottom: 1px solid #DFDFDF;
+    border-left: 1px solid #DFDFDF;
+    color: #999;
+    border-bottom-left-radius: 5px;
+}
+
+.app {
+	margin-top: 25px;
+}
+
+.pagina {
+	border:solid 1px #DFDFDF;
+	padding:25px !important;
+}
+
+.list-group .list-group-item.active {
+	background-color: #fff;
+	border-color: #009933;
+    border-left:solid 10px #009933;
+    color: #009933;
+}
+
+.list-group .list-group-item {
+	color: #212529;
+	transition: 0.5s;
+}
+
+.list-group .list-group-item:hover {
+	text-decoration: none;
+	color: #009933;
+}
+
+h4 {
+	color: #009933 !important;
+}
+
+

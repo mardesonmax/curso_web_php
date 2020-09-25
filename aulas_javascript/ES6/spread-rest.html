@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		//contexto spread
+
+		// string
+		let tituloArtigo = 'Como utilizar o operador rest/spread'
+
+		console.log(tituloArtigo)
+		console.log(...tituloArtigo)
+		console.log([...tituloArtigo])
+
+		// array
+		let listaCurso1 = ['NodeJS e MongoDB', 'ES6, TypeScript e Angular 4']
+		let listaCurso2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux']
+		let listaCursoCompleto = ['Web Completo', 'Android Competo', ...listaCurso1, ...listaCurso2]
+
+		console.log(listaCursoCompleto)
+
+		//objetos
+		let pessoa = { nome: 'João', idade: 27}
+		let clone = { ...pessoa, endereco: 'Rua tal'}
+		console.log(clone)
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				$('#onload').html('Página carregada')
+
+
+				$(window).scroll(() => {
+					$('#scroll').html('scroll acionado')
+				})
+
+				$(window).resize(() => {
+					$('#resize').html('Página redimesionada')
+				})
+
+				$('#div1').scroll((e) => {
+					$(e.target).css('background-color', 'red')
+				})
+
+				//===============================
+				//Mouse click
+				//===============================
+				$('#btn1').mousedown(() => {
+					$('#div2').css('background-color', 'green')
+				})
+
+				$('#btn1').mouseup(() => {
+					$('#div2').css('background-color', 'blue')
+				})
+
+				$('#btn2').dblclick(() => {
+					$('#div2').css('background-color', 'yellow')
+				})
+
+				//===============================
+				//Mouse move
+				//===============================
+
+				$('#div2').mousemove((e)=> {
+					$('#sobreDiv').html('X:'+e.offsetX + ' | Y:' + e.offsetY)
+				})
+
+				function internaExterna (res) {
+					$('#interna-externa').html(res)
+				}
+
+				$('.externa').mouseenter(() =>{
+					internaExterna('Entrou na div externa')
+				})
+
+				$('.externa').mouseleave(() =>{
+					internaExterna('Saiu da div externa')
+				})
+
+				$('.interna').mouseenter(() =>{
+					internaExterna('Entrou na div interna')
+				})
+
+				$('.interna').mouseleave(() =>{
+					internaExterna('Saiu da div interna')
+				})
+
+				//===============================
+				//Eventos teclados
+				//===============================
+
+				/*
+				$('#teclado').keydown((e) => {
+					let txt = $(e.target).val()
+					$('#resTeclado').html(txt)
+				})
+				*/
+								
+				$('#teclado').keyup((e) => {
+
+					let numero = $(e.target).val()
+
+					if(!isNaN(numero)) {
+
+						$('#resTeclado').html(numero)
+
+					} else {
+
+						let key = numero.replace(e.key, '')
+
+						console.log(key)
+
+						$(e.target).val(key)
+
+						alert('Por favor, digite apenas numeros')
+					}
+					
+
+					// if(e.keyCode == 13) {
+					// 	$('#resTeclado').html(txt)
+					// }
+					
+				})
+
+				//inputs
+				$('#nome, #email').focus((e) => {
+
+					$(e.target).addClass('inputFocus')
+				})
+				//-------
+
+				$('#nome, #email').blur((e) => {
+
+					$(e.target).removeClass('inputFocus')
+				})
+
+				//select
+				$('#opc').change((e) => {
+					console.log($(e.target).val())
+				})
+
+
+				//formulario submit
+				$('#form').submit((e) => {
+
+					e.preventDefault()
+
+					console.log('Formulário enviado.')
+
+				})
+
+			})
+		</script>
+
+		<style>
+			.externa {
+				width: 400px;
+				height: 400px;				
+				display: flex;
+				justify-content: center;
+				background: #555;
+			}
+
+			.interna {				
+				width: 150px;
+				height: 150px;
+				align-self: center;
+				background: #202026;
+			}
+
+			input {
+				outline: none;
+				border-radius: 5px;
+				border: 2px solid;
+				padding: 5px;
+			} 
+
+			.inputFocus {
+				background: #eee;
+				color: #202026;
+				border-color: #555;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Window: </span><span id="resize">?</span>
+			<hr />
+
+			<div id="div1" style="width: 100px; height: 100px; overflow-y: scroll; border: 1px solid">
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</div>
+
+			<h3>Mouse</h3>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="div2" style="border: 1px solid; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div: </span>
+			<span id="sobreDiv"></span>
+
+			<div class="externa">
+				<div class="interna">
+					
+				</div>
+			</div>
+			<span>Resultado do evento sobre as divs: </span>
+			<span id="interna-externa"></span>
+
+			<hr />
+
+			<h3>Teclado</h3>
+			<span>CEP:</span>
+			<input type="text" id="teclado" />
+			<span>Resultado do evento sobre o input: </span> <span id="resTeclado"></span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form id="form">
+				<span>Nome:</span>
+				<input type="text" id="nome" />
+
+				<span>E-mail:</span>
+				<input type="text" id="email" />
+
+				<span>Motivo do contato:</span>
+				<select id="opc">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>

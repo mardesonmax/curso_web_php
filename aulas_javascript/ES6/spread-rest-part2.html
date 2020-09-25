@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		// rest
+		function info(...param) {
+
+			let nome = param[0]
+			let email = param[1]
+
+			console.log(`Nome: ${nome}, Email: ${email}`)
+
+		}
+
+		info('Mardeson', 'max@gmail.com')
+
+		//--------------
+		function soma(...param) {
+			let result = 0
+
+			console.log(param)
+
+			param.forEach(r => result += r)
+
+			return console.log(result)
+		}
+
+		soma(5, 5, 10, 20, 2, -10)
+
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

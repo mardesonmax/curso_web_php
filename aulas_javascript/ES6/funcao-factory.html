@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		//Designer Factory
+		let Bicicleta = function(cor, macha, aro) {
+			return {
+				cor,
+				macha,
+				aro,
+				pedalar() {console.log('Método pedalar executado')}
+			}
+		}
+
+		let bicicleta1 = Bicicleta('vermelha', 18, 16)
+		console.log(bicicleta1);
+
+		bicicleta1.pedalar()
+
+		let bicicleta2 = Bicicleta('azul', 7, 12)
+		console.log(bicicleta2);
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

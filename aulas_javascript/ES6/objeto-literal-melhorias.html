@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		let nome = 'Mardeson'
+		let idade = 25
+		let sexo = 'Masculino'
+		let profissao = 'Programador'
+
+		let objeto = {
+			nome: nome,
+			idade: idade,
+			sexo: sexo,
+			profissao: profissao,
+			exibirResumo: function() {
+				console.log(`Objeto 1: ${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+			}
+		}	
+
+		console.log(objeto)
+		objeto.exibirResumo()
+
+		// Melhorias -------------------------------
+		let objeto2 = {
+			nome,
+			idade,
+			sexo,
+			profissao,
+			exibirResumo() {
+				console.log(`Objeto 2: ${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+			}
+		}
+
+		console.log(objeto2)
+		objeto2.exibirResumo()
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

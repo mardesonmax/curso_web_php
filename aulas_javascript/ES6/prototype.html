@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		// objeto líteral
+		let a1 = {
+			cor: 'Branco',
+			modelo: 'Airbus a380',
+			levantarVoo: function() { console.log('Levantar Voo')}
+		}
+
+		// função construtiva
+		let AviaoF = function() {
+			this.cor = 'Azul',
+			this.modelo = 'Boing 787',
+			this.levantarVoo = function() { console.log('Levantar Voo')}
+		}
+
+		let a2 = new AviaoF()
+
+		//Class
+		class AviaoC {
+			constructor() {
+				this.cor = 'Vermelho',
+				this.modelo = 'Embraeer E-jets'
+			}
+
+			levantarVoo() { console.log('Levantar Voo')}
+
+		}
+
+		let a3 = new AviaoC()
+
+		console.log(a1)
+		console.log(a2)
+		console.log(a3)
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Orientação a Objetos</title>
+
+	<script>
+		let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+		// let [a, b, , c] = frutas //Pular indece , ,
+		let [a, b = 'Abacate', c, d, e = 'Banana'] = frutas
+
+		//console.log(a, b, c, d, e)
+
+		//--------------------------------------------------
+
+		let data = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['Max', 'Maria']]
+
+		let [[, ,fruta], [,nome2]] = data
+
+		console.log(`Fruta: ${fruta}, Pessoa: ${nome2}`,)
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

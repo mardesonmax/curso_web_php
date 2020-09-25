@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			#div1 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #202026;
+			}
+
+			.emDesctaques {
+				background: red;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				$('#btn2').on('click', () => {
+					alert('BTN 2 clicado')
+				})
+
+				$('#btn1').on('click', () => {
+					$('#btn2').trigger('click')
+				})
+
+				//---------------------------
+
+				$('#div1').hover(
+					e => $(e.target).toggleClass('emDesctaques')					
+				)
+			})
+		</script>
+
+		
+	</head>
+
+	<body>
+	
+	 	<button id="btn1">BTN 1</button>
+	 	<button id="btn2">BTN 2</button>
+
+	 	<hr/>
+
+	 	<div id="div1"></div>
+
+	</body>
+
+</html>

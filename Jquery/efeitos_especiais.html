@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			button {
+				margin-bottom: 5px;
+				width: 100px;
+			}
+
+			.div {
+				width: 100px;
+				height: 100px;
+			}
+
+			.div1 {
+				background-color: red;
+				display: none;
+			}
+
+			.div2 {
+				background-color: green;
+				display: none;
+			}
+
+			.div3 {
+				background-color: blue;
+				display: none;
+			}
+
+			.grupo {
+				padding: 25px;				
+			}
+
+			#conteudo {
+				width: 100%;
+				height: auto;
+				background: #c9c9c9;
+				display: flex;
+				justify-content: space-between;
+				
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() => {
+				
+				$('#btn1').on('click', () => {
+					$('#div1').toggle(2000)
+				})
+
+				$('#btn2').on('click', () => {
+					$('#div2').fadeToggle(2000)
+				})
+
+				$('#btn3').on('click', () => {
+					$('#div3').slideToggle(2000)
+				})
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="conteudo">
+			<div class="grupo">
+				<button id="btn1" type="button">EFEITO 1</button>
+				<div id="div1" class="div div1"></div>
+			</div>
+
+			<div class="grupo">
+				<button id="btn2" type="button">EFEITO 2</button>
+				<div id="div2" class="div div2"></div>
+			</div>
+
+			<div class="grupo">
+				<button id="btn3" type="button">EFEITO 3</button>
+				<div id="div3" class="div div3"></div>
+			</div>
+		</div>
+			
+	</body>
+
+</html>
